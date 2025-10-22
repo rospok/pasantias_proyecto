@@ -6,7 +6,10 @@
         
         <title>{{ $title ?? 'Page Title' }}</title>
         {{-- <link href="{{ asset('tailadmin/css/style.css') }}" rel="stylesheet"> --}}
-        @vite(['resources/css/style.css'])
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        @vite(['resources/css/app.css'])
+
+        @livewireStyles
     </head>
     
   <body
@@ -59,7 +62,9 @@
       <!-- ===== Content Area End ===== -->
     </div>
     <!-- ===== Page Wrapper End ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    @livewireScripts
     </body>
 
 </html>
