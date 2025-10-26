@@ -2,7 +2,145 @@
 layer(base);
 
 @import "tailwindcss";
+ @plugin "daisyui";
+ 
+ @plugin "daisyui/theme" {
+  name: "CONTROL1";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(0.404 0.125 249.5);
+  --color-base-200: oklch(0.218 0.087 249.5);
+  --color-base-300: oklch(0.489 0.336 210.0);
+  --color-base-content: oklch(1.000 0.006 285.9);
+  --color-primary: oklch(0.917 0.103 185.0);
+  --color-primary-content: oklch(0.001 0.310 130.2);
+  --color-secondary: oklch(0.274 0.117 354.3);
+  --color-secondary-content: oklch(94% 0.028 342.258);
+  --color-accent: oklch(0.503 0.177 37.5);
+  --color-accent-content: oklch(0.980 0.141 56.8);
+  --color-neutral: oklch(0.342 0.166 214.1);
+  --color-neutral-content: oklch(93% 0.034 272.788);
+  --color-info: oklch(0.236 0.127 232.7);
+  --color-info-content: oklch(0.852 0.066 243.2);
+  --color-success: oklch(0.689 0.210 163.2);
+  --color-success-content: oklch(0.993 0.077 168.9);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(0.480 0.194 13.4);
+  --color-error-content: oklch(0.895 0.105 12.1);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+@plugin "daisyui/theme" {
+  name: "CONTROL4";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(0.150 0.090 253.6);
+  --color-base-200: oklch(0.371 0.090 251.2);
+  --color-base-300: oklch(0.250 0.087 259.2);
+  --color-base-content: oklch(0.973 0.036 274.7);
+  --color-primary: oklch(71% 0.202 349.761);
+  --color-primary-content: oklch(0.973 0.036 274.7);
+  --color-secondary: oklch(82% 0.111 230.318);
+  --color-secondary-content: oklch(0.973 0.036 274.7);
+  --color-accent: oklch(75% 0.183 55.934);
+  --color-accent-content: oklch(26% 0.079 36.259);
+  --color-neutral: oklch(0.501 0.149 251.2);
+  --color-neutral-content: oklch(0.973 0.036 274.7);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(0.973 0.036 274.7);
+  --color-success: oklch(77% 0.152 181.912);
+  --color-success-content: oklch(0.973 0.036 274.7);
+  --color-warning: oklch(90% 0.182 98.111);
+  --color-warning-content:oklch(45% 0.187 3.815);
+  --color-error: #ff0000ef;
+  --color-error-content: oklch(0.973 0.036 274.7);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+ @plugin "daisyui/theme" {
+  name: "CONTROL3";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(97.788% 0.004 56.375);
+  --color-base-200: oklch(0.940 0.041 245.5);
+  --color-base-300: oklch(0.916 0.025 206.0);
+  --color-base-content: oklch(23.574% 0.066 313.189);
+  --color-primary: oklch(85% 0.138 181.071);
+  --color-primary-content: oklch(43% 0.078 188.216);
+  --color-secondary: oklch(89% 0.061 343.231);
+  --color-secondary-content: oklch(45% 0.187 3.815);
+  --color-accent: oklch(90% 0.076 70.697);
+  --color-accent-content: oklch(47% 0.157 37.304);
+  --color-neutral: oklch(0.270 0.136 227.0);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(68% 0.169 237.323);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(69% 0.17 162.48);
+  --color-success-content: oklch(26% 0.051 172.552);
+  --color-warning: oklch(79% 0.184 86.047);
+  --color-warning-content: oklch(28% 0.066 53.813);
+  --color-error: oklch(64% 0.246 16.439);
+  --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
 
+@plugin "daisyui/theme" {
+  name: "CONTROL2";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(0.859 0.092 264.1);
+  --color-base-200: oklch(0.987 0.004 172.9);
+  --color-base-300: oklch(0.348 0.154 239.1);
+  --color-base-content: oklch(0.010 0.020 252.0);
+  --color-primary: oklch(51% 0.262 276.966);
+  --color-primary-content: oklch(96% 0.018 272.314);
+  --color-secondary: oklch(0.633 0.348 249.5);
+  --color-secondary-content: oklch(98% 0 0);
+  --color-accent: oklch(60% 0.118 184.704);
+  --color-accent-content: oklch(98% 0.014 180.72);
+  --color-neutral: oklch(0.404 0.125 249.5);
+  --color-neutral-content: oklch(0.966 0.343 267.3);
+  --color-info: oklch(58% 0.158 241.966);
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: oklch(62% 0.194 149.214);
+  --color-success-content: oklch(98% 0.018 155.826);
+  --color-warning: oklch(66% 0.179 58.318);
+  --color-warning-content: oklch(98% 0.022 95.277);
+  --color-error: #;
+  --color-error-content: oklch(97% 0.013 17.38);
+  --radius-selector: 2rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -742,4 +880,139 @@ span.flatpickr-weekday,
     0px 1px 2px 0px rgba(16, 24, 40, 0.06);
   opacity: 0.8;
   cursor: grabbing; /* Changes the cursor to indicate dragging */
+}
+
+.dark .button-edit{
+  background: #fcb7007a;
+  color: #fcb700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border:  1px solid #fcb700;
+}
+
+.dark .button-edit:hover{
+  background: #fcb700;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+ .dark .button-view{
+  background: #08bcfe70;
+  color: #00bafe;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border:  1px solid #0c99cd;
+}
+
+.dark .button-view:hover{
+  background: #00bafe;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark .badge-status-active {
+background: #04ac7787;
+    color: #00dc96;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px 19px;
+  border: none;
+}
+
+.dark .badge-status-inactive {
+  background: #ff637d6b;
+  color: #ff637d;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px 10px;
+  border: none;
+}
+
+.dark .table-baground {
+  background: #182550cc;
+  border: 1px solid #0f2e8d;
+  }
+
+.dark .btn-create{
+  background: #182550cc;
+  border: 1px solid #164fe1;
+  color:#164fe1;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.dark .btn-create:hover{
+  background: #0f2e8d;
+  color: #ffffff;
+}
+/* MODO CLARO */
+
+.btn-create{
+background: #ecf3ff;
+    color: #4b6bff;
+    border: 1px solid #cdd8ff;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.btn-create:hover{
+  background: #465fff;
+  color: #ffffff;
+}
+
+.badge-status-active {
+background: #2af9b887;
+    color: #009868;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px 19px;
+  border: none;
+}
+
+.badge-status-inactive {
+  background: #ff4d606b;
+  color: #ff4d60;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px 10px;
+  border: none;
+}
+
+.button-edit{
+background: #fcb7007d;
+    color: #765600;
+
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border:  1px solid #fcb700;
+}
+.button-edit:hover{
+  background: #fcb700;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-view{
+background: #08bcfe8f;
+    color: #005878;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border:  1px solid #0c99cd;
+}
+
+.button-view:hover{
+  background: #00bafe;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.table-baground{
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
