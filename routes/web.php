@@ -14,3 +14,5 @@ Route::get('/login', function () {
 Route::get('/view', function () {
     return view('view');
 })->name('view');
+
+Route::get('/logins',  App\Livewire\Login::class)->name('logins');

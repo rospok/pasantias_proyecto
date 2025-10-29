@@ -28,14 +28,41 @@
         class="relative flex flex-col justify-center w-full h-screen dark:bg-gray-900 sm:p-0 lg:flex-row"
       >
         <!-- Form -->
+        <div class="flex flex-col flex-1 w-full lg:w-1/2">
+    <div class="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
+        <div>
+            <div class="mb-5 sm:mb-2">
+                <div class="login-logo">
+                    <img src="{{ asset('tailadmin/images/logo-desarrolo.png') }}" alt="Logo"/>
+                    <h1>Urbicontrol</h1>
+                </div>
+                <h1 class="mb-2 mt-4 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md" style="font-size: 25px;">
+                    Iniciar sesión
+                </h1>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Ingresa tu correo electrónico y contraseña para iniciar sesión.
+                </p>
+            </div>
+            
         @livewire('login')
+
+        
+                <div class="mt-5">
+                    <p class="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
+                        ¿No tienes una cuenta?
+                        <a href="/signup.html" class="text-brand-500 hover:text-brand-600 dark:text-brand-400">Regístrate</a>
+                    </p>
+                </div>
+            </div>
+    </div>
+</div>
         <div
           class="relative items-center hidden w-full h-full bg-brand-950 dark:bg-white/5 lg:grid lg:w-1/2"
         >
           <div class="flex items-center justify-center z-1">
             <!-- ===== Common Grid Shape Start ===== -->
-            {{-- <x-common-grid /> --}}
-                <img src="{{ asset('tailadmin/images/futbol.png') }}" alt="Logo"/>
+            <x-common-grid />
+                <img src="{{ asset('tailadmin/images/login3.png') }}" alt="Logo"/>
           </div>
         </div>
         <!-- Toggler -->

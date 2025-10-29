@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap")
 layer(base);
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
  @plugin "daisyui";
  
@@ -271,6 +274,8 @@ layer(base);
   --color-warning-900: #7a2e0e;
   --color-warning-950: #4e1d09;
 
+  --color-new-100: #8accffab;
+
   --color-theme-pink-500: #ee46bc;
 
   --color-theme-purple-500: #7a5af8;
@@ -330,11 +335,11 @@ layer(base);
 }
 
 @utility menu-item-active {
-  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+  @apply bg-new-100 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
 }
 
 @utility menu-item-inactive {
-  @apply text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300;
+  @apply text-gray-700 hover:bg-new-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-brand-500/[0.12] dark:hover:text-gray-300;
 }
 
 @utility menu-item-icon-active {
@@ -425,35 +430,56 @@ layer(base);
   }
 }
 
-.sidebar:hover {
-  width: 290px;
+@media (max-width: 1023.50px) {
+.img-responsive {
+  margin-bottom: 70px;
+
+  img {
+    display: none;
+    visibility: hidden;
+  }
 }
-.sidebar:hover .logo {
-  display: block;
-}
-.sidebar:hover .logo-icon {
-  display: none;
-}
-.sidebar:hover .sidebar-header {
-  justify-content: space-between;
-}
-.sidebar:hover .menu-group-title {
-  display: block;
-}
-.sidebar:hover .menu-group-icon {
-  display: none;
 }
 
-.sidebar:hover .menu-item-text {
-  display: inline;
-}
+@media (min-width: 1023.51px) {
+  .sidebar:hover {
+    width: 290px;
+    .img-responsive {
 
-.sidebar:hover .menu-item-arrow {
-  display: block;
-}
+      img {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+  .sidebar:hover .logo {
+    display: block;
+  }
+  .sidebar:hover .logo-icon {
+    /* display: none; */
+  visibility: visible;
+  }
+  .sidebar:hover .sidebar-header {
+    justify-content: space-between;
+  }
+  .sidebar:hover .menu-group-title {
+    display: block;
+  }
+  .sidebar:hover .menu-group-icon {
+    display: none;
+  }
 
-.sidebar:hover .menu-dropdown {
-  display: flex;
+  .sidebar:hover .menu-item-text {
+    display: inline;
+  }
+
+  .sidebar:hover .menu-item-arrow {
+    display: block;
+  }
+
+  .sidebar:hover .menu-dropdown {
+    display: flex;
+  }
 }
 
 .tableCheckbox:checked ~ span span {
@@ -930,7 +956,7 @@ background: #04ac7787;
 
 .dark .table-baground {
   background: #182550cc;
-  border: 1px solid #0f2e8d;
+  /* border: 1px solid #0f2e8d; */
   }
 
 .dark .btn-create{
@@ -945,14 +971,53 @@ background: #04ac7787;
 }
 
 .dark .btn-create:hover{
-  background: #0f2e8d;
+  color: #2160ff;
+  color: #ffffff;
+}
+
+.dark .header-sidebar{
+background: #111d52;
+  border: 1px solid #002e49;
+}
+
+
+.dark .background{
+ background: #0e194882;
+}
+
+.dark .button-header{
+  background: #0f1939;
+}
+
+.dark .sidebar-span{
   color: #ffffff;
 }
 /* MODO CLARO */
 
+.button-header{
+  background: #d4eafb;
+
+}
+
+.header-sidebar{
+    background: #afd8f7;
+    border: .2px solid #d4eafb;
+}
+
+.sidebar-span{
+  color: #000000;
+}
+
+.background{
+  background: #55adf040;
+  /* background: #f9fafb; */
+}
+
+
+
 .btn-create{
 background: #ecf3ff;
-    color: #4b6bff;
+    color:#0194e6;
     border: 1px solid #cdd8ff;
   text-transform: uppercase;
   letter-spacing: .5px;
@@ -1013,6 +1078,69 @@ background: #08bcfe8f;
 }
 
 .table-baground{
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #f2f7ff;
+  /* border: 1px solid#e2e8f0; */
+}
+
+.div-logo{
+display: flex;
+justify-items: center;
+align-items: center;
+
+  img{
+    width: 60px;
+  }
+  
+  h1{
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #0090ff;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  }
+
+  @media (max-width: 375px) {
+    img{
+      width: 40px;
+    }
+
+    .div-logo:hover img{
+      width: 40px;
+    }
+
+    h1{
+    font-size: 18px;
+    }
+    
+  }
+}
+
+.border-sidebar{
+  border: 1px solid #c4e5ff;
+}
+
+.dark .border-sidebar{
+  border: 1px solid #1e2a4c;
+}
+
+.login-logo{
+  display: flex;
+align-items: center;
+justify-content: center;
+
+  img{
+    width: 60px;
+  }
+
+  h1{
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #0090ff;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  }
 }

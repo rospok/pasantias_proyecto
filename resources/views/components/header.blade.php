@@ -1,6 +1,6 @@
 <header
   x-data="{menuToggle: false}"
-  class="sticky top-0 z-99999 flex w-full border-gray-200 bg-white lg:border-b dark:border-gray-800 dark:bg-gray-900"
+  class="header-sidebar sticky top-0 z-99999 flex w-full border-gray-200 bg-white lg:border-b dark:border-gray-800 dark:bg-gray-900"
 >
   <div
     class="flex grow flex-col items-center justify-between lg:flex-row lg:px-6"
@@ -11,7 +11,7 @@
       <!-- Hamburger Toggle BTN -->
       <button
         :class="sidebarToggle ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-gray-800' : ''"
-        class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg border-gray-200 text-gray-500 lg:h-11 lg:w-11 lg:border dark:border-gray-800 dark:text-gray-400"
+        class="border-sidebar z-99999 flex h-10 w-10 items-center justify-center rounded-lg border-gray-200 text-gray-500 lg:h-11 lg:w-11 lg:border dark:border-gray-800 dark:text-gray-400"
         @click.stop="sidebarToggle = !sidebarToggle"
       >
         <svg
@@ -68,17 +68,20 @@
       <!-- Hamburger Toggle BTN -->
 
       <a href="index.html" class="lg:hidden">
-        <img class="dark:hidden" src="{{ asset('tailadmin/images/logo/logo.svg') }}" alt="Logo" />
+        <div class="div-logo">
+        <img class=" dark:hidden" src="{{ asset('tailadmin/images/logo-desarrolo.png') }}" alt="Logo" />
         <img
           class="hidden dark:block"
-          src="{{ asset('tailadmin/images/logo/logo-dark.svg') }}"
+          src="{{ asset('tailadmin/images/logo-desarrolo.png') }}"
           alt="Logo"
         />
+        <h1>Urbicontrol</h1>
+        </div>
       </a>
 
       <!-- Application nav menu button -->
       <button
-        class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 lg:hidden dark:text-gray-400 dark:hover:bg-gray-800"
+        class=" button-header z-99999 flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 lg:hidden dark:text-gray-400 dark:hover:bg-gray-800"
         :class="menuToggle ? 'bg-gray-100 dark:bg-gray-800' : ''"
         @click.stop="menuToggle = !menuToggle"
       >
@@ -124,7 +127,7 @@
               type="text"
               placeholder="Search or type command..."
               id="search-input"
-              class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-200 bg-transparent py-2.5 pr-14 pl-12 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden xl:w-[430px] dark:border-gray-800 dark:bg-gray-900 dark:bg-white/[0.03] dark:text-white/90 dark:placeholder:text-white/30"
+              class="border-sidebar dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-200 bg-transparent py-2.5 pr-14 pl-12 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden xl:w-[430px] dark:border-gray-800 dark:bg-gray-900 dark:bg-white/[0.03] dark:text-white/90 dark:placeholder:text-white/30"
             />
 
             <button
@@ -146,7 +149,7 @@
       <div class="2xsm:gap-3 flex items-center gap-2">
         <!-- Dark Mode Toggler -->
         <button
-          class="hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+          class="button-header hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
           @click.prevent="darkMode = !darkMode"
         >
           <svg
@@ -187,7 +190,7 @@
           @click.outside="dropdownOpen = false"
         >
           <button
-            class="hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+            class="button-header hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
             @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false"
           >
             <span
