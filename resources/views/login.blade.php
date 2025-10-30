@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sign In| TailAdmin - Tailwind CSS Admin Dashboard Template</title>
     @vite(['resources/css/style.css'])
-            @livewireStyles
+    @livewireStyles
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body
     x-data="{ page: 'comingSoon', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
@@ -21,12 +22,12 @@
 
   <x-preloader />
 
-    {{-- @livewire('login') --}}
 
      <div class="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
       <div
         class="relative flex flex-col justify-center w-full h-screen dark:bg-gray-900 sm:p-0 lg:flex-row"
       >
+
         <!-- Form -->
         <div class="flex flex-col flex-1 w-full lg:w-1/2">
     <div class="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">

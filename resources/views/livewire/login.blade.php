@@ -5,19 +5,6 @@
                     </div>
                 </div>
                 
-                <!-- Mensajes flash -->
-                @if (session()->has('message'))
-                    <div class="p-3 mb-4 text-green-700 bg-green-100 rounded-lg">
-                        {{ session('message') }}
-                    </div>
-                @endif
-                
-                @if (session()->has('error'))
-                    <div class="p-3 mb-4 text-red-700 bg-red-100 rounded-lg">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                
                 <form class="mt-2 space-y-6" wire:submit.prevent="login">
                     <div class="space-y-5">
                         <!-- Email -->
@@ -28,7 +15,7 @@
                             <input
                                 type="email"
                                 id="email"
-                                wire:model="email"
+                                wire:model.blur="email"
                                 name="email"
                                 placeholder="info@gmail.com"
                                 class="dark:bg-dark-900 h-11 w-full rounded-lg border bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
@@ -47,7 +34,7 @@
                                 <input
                                     :type="showPassword ? 'text' : 'password'"
                                     placeholder="Ingresa tu contraseña"
-                                    wire:model="password"
+                                    wire:model.blur="password"
                                     id="password"
                                     name="password"
                                     class="dark:bg-dark-900 h-11 w-full rounded-lg border bg-transparent py-2.5 pl-4 pr-11 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 "
@@ -68,7 +55,12 @@
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
-
+                @if (session()->has('error'))
+                    <div class="p-3 mb-4 text-red-700 bg-red-100">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                
                         <!-- Checkbox y enlace -->
                         <div class="flex items-center justify-between">
                             <div x-data="{ checkboxToggle: false }">

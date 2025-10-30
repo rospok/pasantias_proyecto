@@ -1,0 +1,138 @@
+$(document).ready(function() {
+
+  const productTableConfig = {
+      url: "/{{entity}}/list",
+      errorMessage: "No se pudo cargar la lista de {{entities}}.",
+      columns: [
+          { 
+              data: null,
+              render: function (data, type, row, meta) {
+                  return meta.row + 1;
+              }
+          },
+        { data: "name" },
+        {
+          data: null,
+          render: function (data, type, row) {
+            return (
+              "<span class='badge " +
+              (data.status == 1 ? "bg-success" : "bg-danger") +
+              "'>" +
+              (data.status == 1 ? "Habilitado" : "Deshabilitado") +
+              "</span>"
+            );
+          },
+      },
+      {
+          data: null,
+          render: function (data, type, row) {
+            return (
+              "<div class='btn-group' role='group' aria-label='Basic mixed styles example'>" +
+          "<form id='modal_edit'><button class='btn btn-info' type='submit' style='margin-bottom: 10px;' title='Editar'><i class='bi bi-pencil-square'></i></button> <input type='hidden' id='id' name='id' value='" +
+          row.id +
+          "'> </form>" +
+          "<button type='button' class='btn " +
+          (row.status == 1 ? "bg-danger" : "bg-success") +
+          "' onclick='status{{Entity}}(" +
+          row.id +
+          ")' style='margin-bottom: 10px;' title='Cambio de estado'>" +
+          (row.status == 1 ? "<i class='bi bi-ban'></i>" : "<i class='bi bi-check-lg'></i>") +
+          "</button>" +
+"</div>" 
+            );
+          },
+        },
+      ],
+    };
+    
+    // Inicializar tabla
+    createReusableDataTable("table-{{entity}}", productTableConfig);
+
+    // Resto del código de manejo de formularios...
+    // (Mantener la misma estructura del original con reemplazos de {{entity}})
+    
+
+    handleAjaxFormSubmission(
+      "#form_{{entity}}_status",
+      {
+        url: function() {
+          return `/{{entity}}/status/${$('#id_{{entity}}_status').val()}`;
+        },
+      },
+      function (data) {
+        Swal.fire({
+          icon: "success",
+          title: "Cambio de estado exitoso",
+          toast: true,
+          position: "top-end",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        $("#table-{{entity}}").DataTable().ajax.reload();
+        $("#status_model").modal("hide");
+      }
+    );
+
+    handleAjaxFormSubmission(
+      "#form_{{entity}}_edit",
+      {
+        url: function() {
+          return `/{{entity}}/update/${$('#id_{{entity}}').val()}`;
+        },
+      },
+      function (data) {
+        Swal.fire({
+          icon: "success",
+          title: "Edicion realizada con exito",
+          toast: true,
+          position: "top-end",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        $("#table-{{entity}}").DataTable().ajax.reload();
+        $("#edit_model").modal("hide");
+      }
+    );
+
+    handleAjaxFormSubmission(
+      "#form_{{entity}}_register",
+      { url: `/{{entity}}/store` },
+      function (data) {
+        Swal.fire({
+          icon: "success",
+          title: "Registro exitoso",
+          toast: true,
+          position: "top-end",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        $("#table-{{entity}}").DataTable().ajax.reload();
+        $('#form_{{entity}}_register')[0].reset();
+      }
+    );
+
+    handleAjaxFormSubmission(
+      "#modal_edit",
+      { url: `/{{entity}}/edit/` ,
+        method: 'GET'
+    },
+      function (data) {
+                
+        Object.keys(data).forEach(function(key) {
+            let id_input;
+            id_input = `#${key}_edit`;            
+            $(id_input).val(data[key]);
+        });
+                $('#id_{{entity}}').val(data.id);
+                $('#edit_model').modal('show');
+      }
+    );
+  
+    
+});
+
+
+function status{{Entity}}(id){
+  $('#id_{{entity}}_status').val(id);
+  $('#status_model').modal('show');
+}

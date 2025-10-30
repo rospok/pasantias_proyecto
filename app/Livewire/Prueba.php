@@ -13,6 +13,7 @@ class Prueba extends Component
     
     #[Title('inicio')]
     public $page = 'inicio';
+    
 
     public function render()
     {

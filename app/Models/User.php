@@ -24,6 +24,19 @@ class User extends Authenticatable
         'password',
     ];
 
+        public function getAccessibleModules()
+    {
+        // Obtener módulos a los que el usuario tiene acceso mediante sus permisos
+        $permissionIds = $this->getAllPermissions()->pluck('id');
+        
+        return Module::whereHas('permissions', function($query) use ($permissionIds) {
+            $query->whereIn('id', $permissionIds);
+        })
+        ->where('is_active', true)
+        ->orderBy('order')
+        ->get();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
